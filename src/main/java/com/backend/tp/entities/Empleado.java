@@ -3,10 +3,12 @@ package com.backend.tp.entities;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "empleados")
 public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int legajo;
+    @Column(name = "LEGAJO")
+    private Integer legajo;
 
     @Column(name = "NOMBRE")
     private String nombre;
@@ -20,11 +22,11 @@ public class Empleado {
     public Empleado() {
     }
 
-    public int getLegajo() {
+    public Integer getLegajo() {
         return legajo;
     }
 
-    public void setLegajo(int legajo) {
+    public void setLegajo(Integer legajo) {
         this.legajo = legajo;
     }
 

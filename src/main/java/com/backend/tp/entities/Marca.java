@@ -3,6 +3,7 @@ package com.backend.tp.entities;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "marcas")
 public class Marca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

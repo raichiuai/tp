@@ -2,7 +2,11 @@ package com.backend.tp.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Entity
+@Table(name = "interesados")
 public class Interesado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,13 +25,13 @@ public class Interesado {
     private String apellido;
 
     @Column(name = "RESTRINGIDO")
-    private int restringido;
+    private boolean restringido;
 
     @Column(name = "NRO_LICENCIA")
     private int nroLicencia;
 
     @Column(name = "FECHA_VENCIMIENTO_LICENCIA")
-    private String fechaVencimientoLicencia;
+    private LocalDateTime fechaVencimientoLicencia;
 
     public Interesado() {
     }
@@ -72,11 +76,11 @@ public class Interesado {
         this.apellido = apellido;
     }
 
-    public int getRestringido() {
+    public boolean getRestringido() {
         return restringido;
     }
 
-    public void setRestringido(int restringido) {
+    public void setRestringido(boolean restringido) {
         this.restringido = restringido;
     }
 
@@ -88,11 +92,11 @@ public class Interesado {
         this.nroLicencia = nroLicencia;
     }
 
-    public String getFechaVencimientoLicencia() {
+    public LocalDateTime getFechaVencimientoLicencia() {
         return fechaVencimientoLicencia;
     }
 
-    public void setFechaVencimientoLicencia(String fechaVencimientoLicencia) {
+    public void setFechaVencimientoLicencia(LocalDateTime fechaVencimientoLicencia) {
         this.fechaVencimientoLicencia = fechaVencimientoLicencia;
     }
 }

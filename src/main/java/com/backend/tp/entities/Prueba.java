@@ -2,7 +2,12 @@ package com.backend.tp.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Entity
+@Table(name = "pruebas")
 public class Prueba {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +26,10 @@ public class Prueba {
     private Empleado empleado;
 
     @Column(name = "FECHA_HORA_INICIO")
-    private String fechaHoraInicio;
+    private LocalDateTime fechaHoraInicio;
 
     @Column(name = "FECHA_HORA_FIN")
-    private String fechaHoraFin;
+    private LocalDateTime fechaHoraFin;
 
     @Column(name = "COMENTARIOS")
     private String comentarios;
@@ -64,19 +69,19 @@ public class Prueba {
         this.empleado = empleado;
     }
 
-    public String getFechaHoraInicio() {
+    public LocalDateTime getFechaHoraInicio() {
         return fechaHoraInicio;
     }
 
-    public void setFechaHoraInicio(String fechaHoraInicio) {
+    public void setFechaHoraInicio(LocalDateTime fechaHoraInicio) {
         this.fechaHoraInicio = fechaHoraInicio;
     }
 
-    public String getFechaHoraFin() {
+    public LocalDateTime getFechaHoraFin() {
         return fechaHoraFin;
     }
 
-    public void setFechaHoraFin(String fechaHoraFin) {
+    public void setFechaHoraFin(LocalDateTime fechaHoraFin) {
         this.fechaHoraFin = fechaHoraFin;
     }
 

@@ -2,7 +2,10 @@ package com.backend.tp.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
+@Table(name = "posiciones")
 public class Posicion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,13 +16,13 @@ public class Posicion {
     private Vehiculo vehiculo;
 
     @Column(name="FECHA_HORA")
-    private String fechaHora;
+    private LocalDateTime fechaHora;
 
     @Column(name = "LATITUD")
-    private int latitud;
+    private double latitud;
 
     @Column(name = "LONGITUD")
-    private int longitud;
+    private double longitud;
 
     public Posicion() {
     }
@@ -40,15 +43,15 @@ public class Posicion {
         this.vehiculo = vehiculo;
     }
 
-    public String getFechaHora() {
+    public LocalDateTime getFechaHora() {
         return fechaHora;
     }
 
-    public void setFechaHora(String fechaHora) {
+    public void setFechaHora(LocalDateTime fechaHora) {
         this.fechaHora = fechaHora;
     }
 
-    public int getLatitud() {
+    public double getLatitud() {
         return latitud;
     }
 
@@ -56,7 +59,7 @@ public class Posicion {
         this.latitud = latitud;
     }
 
-    public int getLongitud() {
+    public double getLongitud() {
         return longitud;
     }
 
